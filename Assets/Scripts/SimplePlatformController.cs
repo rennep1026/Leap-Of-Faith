@@ -20,21 +20,45 @@ public class SimplePlatformController : MonoBehaviour
     private bool grounded = false;
     private Animator anim;
     private Rigidbody2D rb2d;
+	private bool blanketActive = false;
+	private GameObject blanket;
+	private Slider fearMeter;
+	private float fearValue;
 
 	void Awake ()
     {
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
+		blanket = GameObject.Find ("blanket");
+		blanket.SetActive (false);
+		fearMeter = Slider.FindObjectOfType<Slider> ();
+		fearValue = 0.5f;
     }
 	
 	void Update ()
     {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump")) // && grounded)
         {
             jump = true;
         }
+
+		if (Input.GetButtonDown ("Fire1")) 
+		{
+			if (blanketActive)
+			{
+				blanket.SetActive(false);
+				blanketActive = false;
+			}
+			else
+			{
+				blanket.SetActive(true);
+				blanketActive = true;
+			}
+		}
+
+
 	}
 
     void FixedUpdate()
@@ -62,6 +86,16 @@ public class SimplePlatformController : MonoBehaviour
             //audio.Play();
             sounds[0].Play();
         }
+
+		if (blanketActive) {
+			if (fearValue <= 1)
+				fearValue += .001f;
+		} else
+			if (fearValue >= 0)
+				fearValue -= .001f;
+
+		fearMeter.value = fearValue;
+			
     }
 
     void Flip()
@@ -76,6 +110,6 @@ public class SimplePlatformController : MonoBehaviour
     {
         ++score;
         sounds[1].Play();
-        scoreText.text = "Score: " + score;   
+        scoreText.text = "Stuffies: " + score;   
     }
 }

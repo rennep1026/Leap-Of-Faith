@@ -1,11 +1,13 @@
 fileFormatVersion: 2
-guid: bc16422a503ec43cab4ad9ddab02ff7a
+guid: f74572c13e698fa45ac1d40bbc24e66e
+timeCreated: 1447669713
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -25,10 +27,10 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -47,18 +49,8 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: char_enemy_alienShip-damaged
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 560
-        height: 480
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-  spritePackingTag: characters
+    sprites: []
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 

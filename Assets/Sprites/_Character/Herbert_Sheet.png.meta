@@ -1,11 +1,15 @@
 fileFormatVersion: 2
-guid: 3757687d37f7d4c5e895fe56f03cbc84
+guid: e23ab57edc79b2747af07d8e86aeebb3
+timeCreated: 1447665289
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Herbert_Stand
+    21300002: Herbert_Walk
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -25,10 +29,10 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -36,29 +40,39 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 323, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: char_enemy_alienShip
+    - name: Herbert_Stand
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 560
-        height: 480
+        x: 11
+        y: 144
+        width: 172
+        height: 204
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-  spritePackingTag: characters
+    - name: Herbert_Walk
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 142
+        width: 173
+        height: 212
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 
