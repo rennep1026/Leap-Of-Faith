@@ -897,13 +897,41 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2302298, guid: baef7a377dc81854298d809a57534207, type: 2}
+    - {fileID: 3368662, guid: baef7a377dc81854298d809a57534207, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: baef7a377dc81854298d809a57534207, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &781696825 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 169670, guid: baef7a377dc81854298d809a57534207, type: 2}
   m_PrefabInternal: {fileID: 713300848}
+--- !u!212 &781696827
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781696825}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 6c5c5cc99a3d0b04eaf6447102437a83, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &781696829 stripped
 Transform:
   m_PrefabParentObject: {fileID: 452044, guid: baef7a377dc81854298d809a57534207, type: 2}
