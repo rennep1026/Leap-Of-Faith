@@ -15,9 +15,14 @@ public class SpawnCoins : MonoBehaviour
     {
         for (int i = 0; i < coinSpawns.Length; ++i)
         {
-            int coinFlip = Random.Range(0, 2);
-            if (coinFlip > 0)
-                Instantiate(coin, coinSpawns[i].position, Quaternion.identity);
+            int coinFlip = Random.Range(0, 2); //Check whether to spawn coin or not.
+            if (coinFlip > 0){
+				Vector3 parentPlatform = coinSpawns[i].parent.gameObject.transform.position;
+				Vector3 newPos = parentPlatform;
+				newPos[1] += 2f;
+				newPos[0] += i*2-1f;
+                Instantiate(coin, newPos, Quaternion.identity);
+			}
         }
     }
 }
