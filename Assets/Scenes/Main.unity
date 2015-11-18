@@ -897,6 +897,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 452044, guid: baef7a377dc81854298d809a57534207, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 452044, guid: baef7a377dc81854298d809a57534207, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 452044, guid: baef7a377dc81854298d809a57534207, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162206, guid: baef7a377dc81854298d809a57534207, type: 2}
+      propertyPath: m_Size.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162206, guid: baef7a377dc81854298d809a57534207, type: 2}
+      propertyPath: m_Size.x
+      value: 1.60000002
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2302298, guid: baef7a377dc81854298d809a57534207, type: 2}
     - {fileID: 3368662, guid: baef7a377dc81854298d809a57534207, type: 2}
@@ -930,7 +950,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c5c5cc99a3d0b04eaf6447102437a83, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ef7d6ebcc310d6439046121d80237ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &781696829 stripped
 Transform:
