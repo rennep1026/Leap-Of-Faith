@@ -11,7 +11,7 @@ public class SimplePlatformController : MonoBehaviour
 
     public float moveForce = 365f;
     public float maxSpeed = 5f;
-    public float jumpForce = 1000f;
+    public float jumpForce = 500f;
     public Transform groundCheck;
     public Text scoreText;
     public int score = 0;
@@ -24,6 +24,12 @@ public class SimplePlatformController : MonoBehaviour
 	private GameObject blanket;
 	private Slider fearMeter;
 	private float fearValue;
+	private GameObject heart1;
+	private GameObject heart2;
+	private GameObject heart3;
+	private GameObject winText;
+	private int hearts;
+	private bool blind;
 
 	void Awake ()
     {
@@ -33,6 +39,13 @@ public class SimplePlatformController : MonoBehaviour
 		blanket.SetActive (false);
 		fearMeter = Slider.FindObjectOfType<Slider> ();
 		fearValue = 0.5f;
+		heart1 = GameObject.Find ("heart1");
+		heart2 = GameObject.Find ("heart2");
+		heart3 = GameObject.Find ("heart3");
+		winText = GameObject.Find ("winText");
+		winText.SetActive (false);
+		hearts = 3;
+		blind = false;
     }
 	
 	void Update ()
@@ -46,7 +59,7 @@ public class SimplePlatformController : MonoBehaviour
 
 		if (Input.GetButtonDown ("Fire1")) 
 		{
-			if (blanketActive)
+			if (blanketActive && !blind)
 			{
 				blanket.SetActive(false);
 				blanketActive = false;
@@ -88,11 +101,20 @@ public class SimplePlatformController : MonoBehaviour
         }
 
 		if (blanketActive) {
-			if (fearValue <= 1)
-				fearValue += .001f;
+			if (fearValue <= 1f)
+				fearValue += .002f;
 		} else
-			if (fearValue >= 0)
-				fearValue -= .001f;
+			if (fearValue >= 0f)
+				fearValue -= .002f;
+
+		if (fearValue <= .01f) {
+			loseHeart();
+			if (hearts > 0)
+				fearValue = .25f;
+		}
+
+		if (fearValue >= .99f)
+			blind = true;
 
 		fearMeter.value = fearValue;
 			
@@ -110,6 +132,22 @@ public class SimplePlatformController : MonoBehaviour
     {
         ++score;
         sounds[1].Play();
-        scoreText.text = "Stuffies: " + score;   
+        scoreText.text = "Stuffies: " + score;  
+		if (score == 10)
+			winText.SetActive (true);
     }
+
+	public void loseHeart()
+	{
+		if (hearts == 3) {
+			heart3.SetActive (false);
+			--hearts;
+		} else if (hearts == 2) {
+			heart2.SetActive (false);
+			--hearts;
+		} else {
+			heart1.SetActive (false);
+			--hearts;
+		}
+	}
 }

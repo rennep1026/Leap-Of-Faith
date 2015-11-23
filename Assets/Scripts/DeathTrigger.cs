@@ -3,6 +3,8 @@ using System.Collections;
 
 public class DeathTrigger : MonoBehaviour
 {
+	private SimplePlatformController controller;
+
     void restart()
     {
         Application.LoadLevel(Application.loadedLevel);
@@ -14,6 +16,9 @@ public class DeathTrigger : MonoBehaviour
         {
             AudioSource audio = GetComponent<AudioSource>();
             audio.Play();
+			//GameObject controllerObject = GameObject.FindWithTag("Player");
+			//controller = controllerObject.GetComponent<SimplePlatformController> ();
+			//controller.loseHeart();
             Invoke("restart", 0.25f);
         }
     }
