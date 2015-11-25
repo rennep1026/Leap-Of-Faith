@@ -9,6 +9,7 @@ public class SimplePlatformController : MonoBehaviour
     [HideInInspector]
     public bool jump = false;
 
+	public Vector3 initialPosition;
     public float moveForce = 365f;
     public float maxSpeed = 5f;
     public float jumpForce = 500f;
@@ -16,10 +17,10 @@ public class SimplePlatformController : MonoBehaviour
     public Text scoreText;
     public int score = 0;
     public AudioSource[] sounds;
+	public Rigidbody2D rb2d;
 
     private bool grounded = false;
     private Animator anim;
-    private Rigidbody2D rb2d;
 	private bool blanketActive = false;
 	private GameObject blanket;
 	private Slider fearMeter;
@@ -33,6 +34,7 @@ public class SimplePlatformController : MonoBehaviour
 
 	void Awake ()
     {
+		initialPosition = transform.position;
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
 		blanket = GameObject.Find ("blanket");
@@ -109,8 +111,6 @@ public class SimplePlatformController : MonoBehaviour
 
 		if (fearValue <= .01f) {
 			loseHeart();
-			if (hearts > 0)
-				fearValue = .25f;
 		}
 
 		if (fearValue >= .99f)
@@ -149,5 +149,7 @@ public class SimplePlatformController : MonoBehaviour
 			heart1.SetActive (false);
 			--hearts;
 		}
+		rb2d.velocity = new Vector2 (0, 0);
+		fearValue = 0.5f;
 	}
 }

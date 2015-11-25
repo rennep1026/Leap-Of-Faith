@@ -16,10 +16,11 @@ public class DeathTrigger : MonoBehaviour
         {
             AudioSource audio = GetComponent<AudioSource>();
             audio.Play();
-			//GameObject controllerObject = GameObject.FindWithTag("Player");
-			//controller = controllerObject.GetComponent<SimplePlatformController> ();
-			//controller.loseHeart();
-            Invoke("restart", 0.25f);
+			GameObject controllerObject = GameObject.FindWithTag("Player");
+			controller = controllerObject.GetComponent<SimplePlatformController> ();
+			controller.transform.position = controller.initialPosition;
+			controller.rb2d.velocity = new Vector2 (0, 0);
+			controller.loseHeart();
         }
     }
 }
