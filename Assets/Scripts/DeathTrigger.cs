@@ -5,10 +5,11 @@ public class DeathTrigger : MonoBehaviour
 {
 	private SimplePlatformController controller;
 
-    void restart()
+    /*void restart()
     {
-        Application.LoadLevel(Application.loadedLevel);
-    }
+		if (controller.hearts > 0)
+        	Application.LoadLevel(1);
+    }*/
 
     void OnTriggerEnter2D (Collider2D other)
     {
@@ -18,7 +19,8 @@ public class DeathTrigger : MonoBehaviour
             audio.Play();
 			GameObject controllerObject = GameObject.FindWithTag("Player");
 			controller = controllerObject.GetComponent<SimplePlatformController> ();
-			controller.transform.position = controller.initialPosition;
+			if (controller.hearts > 0)
+				controller.transform.position = controller.initialPosition;
 			controller.rb2d.velocity = new Vector2 (0, 0);
 			controller.loseHeart();
         }

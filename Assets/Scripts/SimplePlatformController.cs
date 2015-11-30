@@ -18,10 +18,12 @@ public class SimplePlatformController : MonoBehaviour
     public int score = 0;
     public AudioSource[] sounds;
 	public Rigidbody2D rb2d;
+	public bool blanketActive = false;
+	public GameObject herbert;
+	public int hearts;
 
     private bool grounded = false;
     private Animator anim;
-	private bool blanketActive = false;
 	private GameObject blanket;
 	private Slider fearMeter;
 	private float fearValue;
@@ -29,8 +31,9 @@ public class SimplePlatformController : MonoBehaviour
 	private GameObject heart2;
 	private GameObject heart3;
 	private GameObject winText;
-	private int hearts;
+	private GameObject loseMenu;
 	private bool blind;
+	private GameObject blindText;
 
 	void Awake ()
     {
@@ -45,9 +48,14 @@ public class SimplePlatformController : MonoBehaviour
 		heart2 = GameObject.Find ("heart2");
 		heart3 = GameObject.Find ("heart3");
 		winText = GameObject.Find ("winText");
+		loseMenu = GameObject.Find ("loseMenu");
 		winText.SetActive (false);
+		loseMenu.SetActive(false);
 		hearts = 3;
 		blind = false;
+		herbert = GameObject.Find("hero");
+		blindText = GameObject.Find ("blindText");
+		blindText.SetActive(false);
     }
 	
 	void Update ()
@@ -72,6 +80,9 @@ public class SimplePlatformController : MonoBehaviour
 				blanketActive = true;
 			}
 		}
+
+		if (blind)
+			blindText.SetActive(true);
 
 
 	}
@@ -145,9 +156,12 @@ public class SimplePlatformController : MonoBehaviour
 		} else if (hearts == 2) {
 			heart2.SetActive (false);
 			--hearts;
-		} else {
+		} else if (hearts == 1){
 			heart1.SetActive (false);
 			--hearts;
+		} else {
+			blindText.SetActive(false);
+			loseMenu.SetActive(true);
 		}
 		rb2d.velocity = new Vector2 (0, 0);
 		fearValue = 0.5f;
