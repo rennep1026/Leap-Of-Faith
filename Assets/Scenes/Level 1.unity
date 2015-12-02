@@ -979,7 +979,7 @@ Animator:
   m_GameObject: {fileID: 624303118}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1ad1c509ffb314b2b933a73b401aae26, type: 2}
+  m_Controller: {fileID: 9100000, guid: bf359a58409ec2445920b3ee7b000f22, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -2889,7 +2889,7 @@ Animator:
   m_GameObject: {fileID: 1926913598}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7f030f764ca81e946b145638f22af897, type: 2}
+  m_Controller: {fileID: 9100000, guid: bf359a58409ec2445920b3ee7b000f22, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2923,8 +2923,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e23ab57edc79b2747af07d8e86aeebb3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300002, guid: f5a854a98c8e5ac47a28655d642e1c98, type: 3}
+  m_Color: {r: .521568656, g: .411764741, b: .372549027, a: 0}
 --- !u!1 &1954248032
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,6 +3140,10 @@ Prefab:
     - target: {fileID: 453320, guid: a5304a1e25314424abec97d53f221613, type: 2}
       propertyPath: m_LocalScale.z
       value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 111956, guid: a5304a1e25314424abec97d53f221613, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5304a1e25314424abec97d53f221613, type: 2}
