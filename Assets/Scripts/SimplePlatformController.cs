@@ -13,7 +13,6 @@ public class SimplePlatformController : MonoBehaviour
     public float moveForce = 365f;
     public float maxSpeed = 5f;
     public float jumpForce = 500f;
-    public Transform groundCheck;
     public Text scoreText;
     public int score = 0;
     public AudioSource[] sounds;
@@ -62,9 +61,10 @@ public class SimplePlatformController : MonoBehaviour
     {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
-        if (Input.GetButtonDown("Jump")) // && grounded)
+        if (Input.GetButtonDown("Jump") && grounded) // && grounded)
         {
             jump = true;
+			grounded = false;
         }
 
 		if (Input.GetButtonDown ("Fire1")) 
@@ -165,5 +165,11 @@ public class SimplePlatformController : MonoBehaviour
 		}
 		rb2d.velocity = new Vector2 (0, 0);
 		fearValue = 0.5f;
+	}
+
+	void OnCollisionEnter2D (Collision2D other){
+		if (other.gameObject.CompareTag ("ground")) {
+			grounded = true;
+		}
 	}
 }
