@@ -13,6 +13,10 @@ public class MainMenuController : MonoBehaviour
 	public Canvas exitMenu;
 	public Canvas creditsCanvas;
 
+	public Button instructionsButton;
+	public Canvas instructionsCanvas;
+
+
 	// Initialization
 	void Start () 
 	{
@@ -20,6 +24,13 @@ public class MainMenuController : MonoBehaviour
 		optionsButton = optionsButton.GetComponent<Button> ();
 		exitButton = exitButton.GetComponent<Button> ();
 		backButton = backButton.GetComponent<Button> ();
+
+		// -- added by Ciarra 12/3/15, revert if broken
+		instructionsButton = instructionsButton.GetComponent<Button> ();
+		instructionsCanvas = instructionsCanvas.GetComponent<Canvas> ();
+		instructionsCanvas.enabled = false;
+		// -- end of add by Ciarra 12/3/15
+
 		startMenu = startMenu.GetComponent<Canvas> ();
 		optionsMenu = optionsMenu.GetComponent<Canvas> ();
 		exitMenu = exitMenu.GetComponent<Canvas> ();
@@ -60,7 +71,18 @@ public class MainMenuController : MonoBehaviour
 		optionsMenu.enabled = false;
 		exitMenu.enabled = false;
 		creditsCanvas.enabled = false;
+		instructionsCanvas.enabled = false;
 	}
+
+	public void instructionsPress()
+	{
+		startMenu.enabled = false;
+		optionsMenu.enabled = false;
+		exitMenu.enabled = false;
+		creditsCanvas.enabled = false;
+		instructionsCanvas.enabled = true;
+	}
+
 
 	public void StartLevel()
 	{
