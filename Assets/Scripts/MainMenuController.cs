@@ -13,9 +13,16 @@ public class MainMenuController : MonoBehaviour
 	public Canvas exitMenu;
 	public Canvas creditsCanvas;
 
+
+	// INSTRUCTIONS
 	public Button instructionsButton;
 	public Canvas instructionsCanvas;
 
+	public Button instructionsButton1;
+	public Canvas instructionsCanvas1;
+
+	public Button instructionsButton2;
+	public Canvas instructionsCanvas2;
 
 	// Initialization
 	void Start () 
@@ -24,13 +31,6 @@ public class MainMenuController : MonoBehaviour
 		optionsButton = optionsButton.GetComponent<Button> ();
 		exitButton = exitButton.GetComponent<Button> ();
 		backButton = backButton.GetComponent<Button> ();
-
-		// -- added by Ciarra 12/3/15, revert if broken
-		instructionsButton = instructionsButton.GetComponent<Button> ();
-		instructionsCanvas = instructionsCanvas.GetComponent<Canvas> ();
-		instructionsCanvas.enabled = false;
-		// -- end of add by Ciarra 12/3/15
-
 		startMenu = startMenu.GetComponent<Canvas> ();
 		optionsMenu = optionsMenu.GetComponent<Canvas> ();
 		exitMenu = exitMenu.GetComponent<Canvas> ();
@@ -39,6 +39,19 @@ public class MainMenuController : MonoBehaviour
 		optionsMenu.enabled = false;
 		exitMenu.enabled = false;
 		creditsCanvas.enabled = false;
+
+		// INSTRUCTIONS
+		instructionsButton = instructionsButton.GetComponent<Button> ();
+		instructionsCanvas = instructionsCanvas.GetComponent<Canvas> ();
+		instructionsCanvas.enabled = false;
+
+		instructionsButton1 = instructionsButton1.GetComponent<Button> ();
+		instructionsCanvas1 = instructionsCanvas1.GetComponent<Canvas> ();
+		instructionsCanvas1.enabled = false;
+
+		instructionsButton2 = instructionsButton2.GetComponent<Button> ();
+		instructionsCanvas2 = instructionsCanvas2.GetComponent<Canvas> ();
+		instructionsCanvas2.enabled = false;
 	}
 
 	public void startPress()
@@ -71,8 +84,13 @@ public class MainMenuController : MonoBehaviour
 		optionsMenu.enabled = false;
 		exitMenu.enabled = false;
 		creditsCanvas.enabled = false;
-		instructionsCanvas.enabled = false;
+		instructionsCanvas.enabled = false;		
+		instructionsCanvas1.enabled = false;
+		instructionsCanvas2.enabled = false;
+
 	}
+
+	// FUNCTIONS FOR INSTRUCTIONS PAGES -----------
 
 	public void instructionsPress()
 	{
@@ -82,6 +100,21 @@ public class MainMenuController : MonoBehaviour
 		creditsCanvas.enabled = false;
 		instructionsCanvas.enabled = true;
 	}
+
+	public void nextInstruction1(){
+		//backPress ();
+		instructionsCanvas.enabled = false;
+		instructionsCanvas.enabled = false;
+		instructionsCanvas1.enabled = true;
+	}
+
+	public void nextInstruction2(){
+		instructionsCanvas.enabled = false;
+		instructionsCanvas1.enabled = false;
+		instructionsCanvas2.enabled = true;
+	}
+
+	// END FUNCTIONS FOR INSTRUCTIONS PAGES -----------
 
 
 	public void StartLevel()
