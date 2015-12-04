@@ -62,7 +62,7 @@ public class SimplePlatformController : MonoBehaviour
     {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
-        if (Input.GetButtonDown("Jump")) // && grounded)
+        if (Input.GetButtonDown("Jump") && grounded)
         {
             jump = true;
         }
