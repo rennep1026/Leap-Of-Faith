@@ -29,12 +29,18 @@ public class Enemy_Track : MonoBehaviour {
 		if (Vector3.Distance (controller.transform.position, gameObject.transform.position) < 10) {
 			Vector3 currPos = gameObject.transform.position;
 			float directionX = Mathf.Sign (controller.transform.position.x - gameObject.transform.position.x);
-			Vector3 targetPos = new Vector3(currPos[0]+(.2f*directionX),currPos[1],currPos[2]);
-			Vector3 down = transform.TransformDirection(Vector3.down);
-			bool checkForFloor = Physics.Raycast(targetPos, down, Mathf.Infinity, 12);
-			Debug.Log("CurrPos " + currPos);
-			Debug.Log("TargetPos " + targetPos);
-			if(checkForFloor){
+			Vector2 targetPos = new Vector2(currPos[0]+(.5f*directionX),currPos[1]+1);
+			Vector2 down = transform.TransformDirection(Vector3.down);
+			RaycastHit2D[] checkForFloor = Physics2D.RaycastAll(targetPos, down);
+			bool checkGround = false;
+			foreach(RaycastHit2D hit in checkForFloor){
+				if(hit.collider!=null){
+					if(hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground")){
+						checkGround = true;
+					}
+				}
+			}
+			if(checkGround){
 				rb2d.velocity = new Vector2 (directionX * maxSpeed, rb2d.velocity.y);
 				if(grounded){
 					rb2d.AddForce(new Vector2(0f, jumpForce));
