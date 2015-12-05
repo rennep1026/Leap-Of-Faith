@@ -39,7 +39,7 @@ public class SimplePlatformController : MonoBehaviour
 
 	void Awake ()
     {
-        availableJumps = 2;
+        availableJumps = 1;
 		initialPosition = transform.position;
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
@@ -107,14 +107,15 @@ public class SimplePlatformController : MonoBehaviour
         if (availableJumps>0 && jump) // was if(jump)
         {
             //anim.SetTrigger("Jump");
-            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y + jumpVal);
-            jump = false;
+            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpVal);
             //AudioSource audio = GetComponent<AudioSource>();
             //audio.Play();
             sounds[0].Play();
             //grounded = false;
             availableJumps--;
         }
+        jump = false;
+		
 
 		if (blanketActive) {
 			if (fearValue <= 1f)
@@ -139,7 +140,7 @@ public class SimplePlatformController : MonoBehaviour
         if (other.gameObject.CompareTag("ground"))
         {
             //grounded = true;
-            availableJumps = 2;
+            availableJumps = 1;
         }
     }
 
@@ -175,7 +176,6 @@ public class SimplePlatformController : MonoBehaviour
 			blindText.SetActive(false);
 			loseMenu.SetActive(true);
 		}
-		rb2d.velocity = new Vector2 (0, 0);
 		fearValue = 0.5f;
 	}
 }
