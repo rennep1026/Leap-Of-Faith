@@ -13,6 +13,7 @@ GameObject:
   - 61: {fileID: 6198796}
   - 114: {fileID: 11491308}
   - 114: {fileID: 11427590}
+  - 95: {fileID: 9534112}
   m_Layer: 0
   m_Name: Enemy_Doctor
   m_TagString: Untagged
@@ -61,6 +62,23 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 3.21000004, y: 4.63000011}
+--- !u!95 &9534112
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119260}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dc4dc0c61007b2246a321483b990d409, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11427590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,7 +135,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: dc4dc0c61007b2246a321483b990d409, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119260}
