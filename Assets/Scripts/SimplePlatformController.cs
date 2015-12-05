@@ -9,37 +9,55 @@ public class SimplePlatformController : MonoBehaviour
     [HideInInspector]
     public bool jump = false;
 
-	public Vector3 initialPosition;
+
+
+    // HERBERT -----------------------
+    public GameObject herbert;
+    public Rigidbody2D rb2d;
+    public Vector3 initialPosition;
     public float moveForce = 365f;
     public float maxSpeed = 5f;
     public float jumpVal = 0.01f;
+    private int availableJumps;
+
+    // blanket
+    public bool blanketActive = false;
+    private GameObject blanket;
+    private bool blind;
+    private GameObject blindText;
+
+    // UI ----------------------------
     public Text scoreText;
     public int score = 0;
+    private GameObject winText;
+
+    // lives, hearts 
+    public int hearts;
+    private GameObject heart1;
+    private GameObject heart2;
+    private GameObject heart3;
+    private GameObject loseMenu;
+
+    // fear meter
+    private Slider fearMeter;
+    private float fearValue;
+    private GameObject fearText;
+    private GameObject paranoiaText;
+
+
+
+    // AUDIO ------------------------
     public AudioSource[] sounds;
-	public Rigidbody2D rb2d;
-	public bool blanketActive = false;
-	public GameObject herbert;
-	public int hearts;
 
-    //private bool grounded = true;
+
     private Animator anim;
-	private GameObject blanket;
-	private Slider fearMeter;
-	private float fearValue;
-	private GameObject heart1;
-	private GameObject heart2;
-	private GameObject heart3;
-	private GameObject winText;
-	private GameObject loseMenu;
-	private bool blind;
-	private GameObject blindText;
 
-    // JUMPS
-    private int availableJumps;
 
 	void Awake ()
     {
+        herbert = GameObject.Find("hero");
         availableJumps = 1;
+
 		initialPosition = transform.position;
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
@@ -47,6 +65,8 @@ public class SimplePlatformController : MonoBehaviour
 		blanket.SetActive (false);
 		fearMeter = Slider.FindObjectOfType<Slider> ();
 		fearValue = 0.5f;
+        fearText = GameObject.Find ("fearText");
+        paranoiaText = GameObject.Find ("paranoiaText");
 		heart1 = GameObject.Find ("heart1");
 		heart2 = GameObject.Find ("heart2");
 		heart3 = GameObject.Find ("heart3");
@@ -56,7 +76,6 @@ public class SimplePlatformController : MonoBehaviour
 		loseMenu.SetActive(false);
 		hearts = 3;
 		blind = false;
-		herbert = GameObject.Find("hero");
 		blindText = GameObject.Find ("blindText");
 		blindText.SetActive(false);
     }
@@ -175,6 +194,12 @@ public class SimplePlatformController : MonoBehaviour
 		} else {
 			blindText.SetActive(false);
 			loseMenu.SetActive(true);
+            fearMeter.gameObject.SetActive(false);
+            fearText.gameObject.SetActive(false);
+            paranoiaText.gameObject.SetActive(false);
+            scoreText.gameObject.SetActive(false);
+            // DISABLE HERBERT'S MOVEMENTS ON DEATH.
+            availableJumps = 0;
 		}
 		fearValue = 0.5f;
 	}
