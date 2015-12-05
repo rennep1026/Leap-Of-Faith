@@ -12,8 +12,7 @@ public class SimplePlatformController : MonoBehaviour
 	public Vector3 initialPosition;
     public float moveForce = 365f;
     public float maxSpeed = 5f;
-    public float jumpForce = 500f;
-    public Transform groundCheck;
+    public float jumpVal = 0.01f;
     public Text scoreText;
     public int score = 0;
     public AudioSource[] sounds;
@@ -93,7 +92,6 @@ public class SimplePlatformController : MonoBehaviour
     void FixedUpdate()
     {
         float h = Input.GetAxis("Horizontal");
-        anim.SetFloat("Speed", Mathf.Abs(h));
 
         if (h * rb2d.velocity.x < maxSpeed)
             rb2d.AddForce(Vector2.right * h * moveForce);
@@ -108,9 +106,8 @@ public class SimplePlatformController : MonoBehaviour
 
         if (availableJumps>0 && jump) // was if(jump)
         {
-
-            anim.SetTrigger("Jump");
-            rb2d.AddForce(new Vector2(0f, jumpForce));
+            //anim.SetTrigger("Jump");
+            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y + jumpVal);
             jump = false;
             //AudioSource audio = GetComponent<AudioSource>();
             //audio.Play();
