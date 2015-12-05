@@ -13,6 +13,7 @@ GameObject:
   - 61: {fileID: 6196380}
   - 114: {fileID: 11452798}
   - 114: {fileID: 11426452}
+  - 95: {fileID: 9586020}
   m_Layer: 0
   m_Name: Enemy_Snowman
   m_TagString: Untagged
@@ -61,6 +62,23 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 4.21999979, y: 4.90999985}
+--- !u!95 &9586020
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111956}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3797fbb0902333c46a1e62b71375a8ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11426452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72,7 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e488ff377662048ae16811098039cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheck: {fileID: 0}
 --- !u!114 &11452798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,7 +119,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
