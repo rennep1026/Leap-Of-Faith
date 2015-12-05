@@ -22,7 +22,7 @@ public class SimplePlatformController : MonoBehaviour
 	public GameObject herbert;
 	public int hearts;
 
-    private bool grounded = false;
+    //private bool grounded = true;
     private Animator anim;
 	private GameObject blanket;
 	private Slider fearMeter;
@@ -35,8 +35,12 @@ public class SimplePlatformController : MonoBehaviour
 	private bool blind;
 	private GameObject blindText;
 
+    // JUMPS
+    private int availableJumps;
+
 	void Awake ()
     {
+        availableJumps = 2;
 		initialPosition = transform.position;
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
@@ -60,14 +64,13 @@ public class SimplePlatformController : MonoBehaviour
 	
 	void Update ()
     {
-        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump"))
         {
             jump = true;
         }
 
-		if (Input.GetButtonDown ("Fire1")) 
+
+        if (Input.GetButtonDown ("Fire1")) 
 		{
 			if (blanketActive && !blind)
 			{
@@ -103,14 +106,17 @@ public class SimplePlatformController : MonoBehaviour
         else if (h < 0 && facingRight)
             Flip();
 
-        if (jump)
+        if (availableJumps>0 && jump) // was if(jump)
         {
+
             anim.SetTrigger("Jump");
             rb2d.AddForce(new Vector2(0f, jumpForce));
             jump = false;
             //AudioSource audio = GetComponent<AudioSource>();
             //audio.Play();
             sounds[0].Play();
+            //grounded = false;
+            availableJumps--;
         }
 
 		if (blanketActive) {
@@ -129,6 +135,15 @@ public class SimplePlatformController : MonoBehaviour
 
 		fearMeter.value = fearValue;
 			
+    }
+
+    void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("ground"))
+        {
+            //grounded = true;
+            availableJumps = 2;
+        }
     }
 
     void Flip()
