@@ -43,6 +43,8 @@ public class SimplePlatformController : MonoBehaviour
     private float fearValue;
     private GameObject fearText;
     private GameObject paranoiaText;
+    private float fearDecrease;
+    private float fearIncrease;
 
 
 
@@ -50,7 +52,7 @@ public class SimplePlatformController : MonoBehaviour
     public AudioSource[] sounds;
 
 
-    private Animator anim;
+    //private Animator anim;
 
 
 	void Awake ()
@@ -59,7 +61,7 @@ public class SimplePlatformController : MonoBehaviour
         availableJumps = 1;
 
 		initialPosition = transform.position;
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
 		blanket = GameObject.Find ("blanket");
 		blanket.SetActive (false);
@@ -78,6 +80,8 @@ public class SimplePlatformController : MonoBehaviour
 		blind = false;
 		blindText = GameObject.Find ("blindText");
 		blindText.SetActive(false);
+        fearIncrease = 0.0005f;
+        fearDecrease = 0.001f;
     }
 	
 	void Update ()
@@ -134,14 +138,18 @@ public class SimplePlatformController : MonoBehaviour
             availableJumps--;
         }
         jump = false;
-		
 
-		if (blanketActive) {
-			if (fearValue <= 1f)
-				fearValue += .002f;
-		} else
-			if (fearValue >= 0f)
-				fearValue -= .002f;
+
+        if (blanketActive)
+        {
+            if (fearValue <= 1f)
+                //fearValue += .002f;
+                fearValue += fearIncrease;
+        }
+        else
+            if (fearValue >= 0f)
+            //fearValue -= .002f;
+            fearValue -= fearDecrease;
 
 		if (fearValue <= .01f) {
 			loseHeart();
