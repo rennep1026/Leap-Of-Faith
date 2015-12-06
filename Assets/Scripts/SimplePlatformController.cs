@@ -80,7 +80,7 @@ public class SimplePlatformController : MonoBehaviour
 		blind = false;
 		blindText = GameObject.Find ("blindText");
 		blindText.SetActive(false);
-        fearIncrease = 0.0005f;
+        fearIncrease = 0.002f;
         fearDecrease = 0.001f;
     }
 	
