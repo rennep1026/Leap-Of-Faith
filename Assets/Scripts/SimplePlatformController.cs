@@ -8,6 +8,7 @@ public class SimplePlatformController : MonoBehaviour
     public bool facingRight = true;
     [HideInInspector]
     public bool jump = false;
+    private int level_no = 1;
 
 
 
@@ -185,7 +186,10 @@ public class SimplePlatformController : MonoBehaviour
         sounds[1].Play();
         scoreText.text = "Stuffies: " + score;  
 		if (score == 10)
-			winText.SetActive (true);
+        {
+            //winText.SetActive (true);
+            Application.LoadLevel(++level_no);
+        }
     }
 
 	public void loseHeart()
