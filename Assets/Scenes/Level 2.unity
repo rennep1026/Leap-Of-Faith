@@ -2038,7 +2038,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 410961603}
-  - 114: {fileID: 410961604}
   m_Layer: 0
   m_Name: Coins
   m_TagString: Untagged
@@ -2068,24 +2067,6 @@ Transform:
   - {fileID: 844586700}
   m_Father: {fileID: 96149682}
   m_RootOrder: 5
---- !u!114 &410961604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11422612, guid: a341b7b34d142c446b1a17ee587588e3,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 410961602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f7f016027c5e74fbd51d4f82a02794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxPlatforms: 20
-  platform: {fileID: 0}
-  horizontalMin: 6.5
-  horizontalMax: 14
-  verticalMin: -6
-  verticalMax: 6
 --- !u!1 &436478021
 GameObject:
   m_ObjectHideFlags: 0
