@@ -19,6 +19,7 @@ public class SimplePlatformController : MonoBehaviour
     public float moveForce = 365f;
     public float maxSpeed = 5f;
     public float jumpVal = 0.01f;
+	private int maxJumps = 1;
     private int availableJumps;
 
     // blanket
@@ -47,7 +48,8 @@ public class SimplePlatformController : MonoBehaviour
     private float fearDecrease;
     private float fearIncrease;
 
-
+	// Powerup
+	private float tjStartTime = 0;
 
     // AUDIO ------------------------
     public AudioSource[] sounds;
@@ -59,7 +61,7 @@ public class SimplePlatformController : MonoBehaviour
 	void Awake ()
     {
         herbert = GameObject.Find("hero");
-        availableJumps = 1;
+        availableJumps = maxJumps;
 
 		initialPosition = transform.position;
         //anim = GetComponent<Animator>();
@@ -110,6 +112,9 @@ public class SimplePlatformController : MonoBehaviour
 		if (blind)
 			blindText.SetActive(true);
 
+		if (tjStartTime != 0) {
+			powerupTripleJump();
+		}
 
 	}
 
@@ -168,7 +173,7 @@ public class SimplePlatformController : MonoBehaviour
         if (other.gameObject.CompareTag("ground"))
         {
             //grounded = true;
-            availableJumps = 1;
+            availableJumps = maxJumps;
         }
     }
 
@@ -214,5 +219,17 @@ public class SimplePlatformController : MonoBehaviour
             availableJumps = 0;
 		}
 		fearValue = 0.5f;
+	}
+
+	public void powerupTripleJump(bool start = false){
+		if (start) {
+			tjStartTime = Time.time;
+			maxJumps = 2;
+		} else {
+			if(Time.time - tjStartTime >= 15){
+				maxJumps = 1;
+				tjStartTime = 0;
+			}
+		}
 	}
 }
