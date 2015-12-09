@@ -1,0 +1,36 @@
+Initialize engine version: 5.2.3f1 (f3d16a1fa2dd)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dum.dll 10.18.13.5906]
+    Renderer: NVIDIA GeForce GTX 580
+    Vendor:   NVIDIA
+    VRAM:     3003 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.045 seconds
+desktop: 1920x1080 120Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\System.dll (this message is harmless)
+Default clip could not be found in attached animations list.
+ 
+(Filename:  Line: 400)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 388 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.978024 ms
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 933.
+Total: 0.363725 ms (FindLiveObjects: 0.065569 ms CreateObjectMapping: 0.034331 ms MarkObjects: 0.248978 ms  DeleteObjects: 0.013608 ms)
+

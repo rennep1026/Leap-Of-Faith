@@ -548,8 +548,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 6.10351562e-05, y: 0}
-  m_SizeDelta: {x: 1363, y: 635}
+  m_AnchoredPosition: {x: 26, y: -11}
+  m_SizeDelta: {x: 2144, y: 1115}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &359804662
 GameObject:
@@ -653,7 +653,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -3321,9 +3323,9 @@ RectTransform:
   - {fileID: 1318424147}
   m_Father: {fileID: 1977604597}
   m_RootOrder: 7
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 543, y: 136}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1086, y: 272}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1678965233
