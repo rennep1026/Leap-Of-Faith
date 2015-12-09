@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -19,7 +19,7 @@ public class SimplePlatformController : MonoBehaviour
     public float moveForce = 365f;
     public float maxSpeed = 5f;
     public float jumpVal = 0.01f;
-	private int maxJumps = 1;
+	private int maxJumps = 2;
     private int availableJumps;
 
     // blanket
@@ -83,8 +83,8 @@ public class SimplePlatformController : MonoBehaviour
 		blind = false;
 		blindText = GameObject.Find ("blindText");
 		blindText.SetActive(false);
-        fearIncrease = 0.002f;
-        fearDecrease = 0.001f;
+        fearIncrease = 0.002f; 
+        fearDecrease = 0.001f; 
     }
 	
 	void Update ()
@@ -224,10 +224,10 @@ public class SimplePlatformController : MonoBehaviour
 	public void powerupTripleJump(bool start = false){
 		if (start) {
 			tjStartTime = Time.time;
-			maxJumps = 2;
+			maxJumps = 3;
 		} else {
 			if(Time.time - tjStartTime >= 15){
-				maxJumps = 1;
+				maxJumps = 2;
 				tjStartTime = 0;
 			}
 		}
