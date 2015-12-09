@@ -8,7 +8,7 @@ public class SimplePlatformController : MonoBehaviour
     public bool facingRight = true;
     [HideInInspector]
     public bool jump = false;
-    private int level_no = 1;
+    private int level_no = Application.loadedLevel;
 
 
 

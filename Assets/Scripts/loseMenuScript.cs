@@ -22,6 +22,6 @@ public class loseMenuScript : MonoBehaviour {
 
 	public void retryPress()
 	{
-		Application.LoadLevel(1);
+		Application.LoadLevel(Application.loadedLevel);
 	}
 }
