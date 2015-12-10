@@ -22,6 +22,10 @@ public class DeathTrigger : MonoBehaviour
 			if (controller.hearts > 0)
 				controller.transform.position = controller.initialPosition;
 			controller.rb2d.velocity = new Vector2 (0, 0);
+			controller.blind = false;
+			controller.blindText.SetActive(false);
+			controller.blanketActive = false;
+			controller.blanket.SetActive(false);
 			controller.loseHeart();
         }
     }

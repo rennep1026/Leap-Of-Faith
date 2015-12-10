@@ -16,9 +16,15 @@ Loading C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\UnityEngi
 Platform assembly: C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.045 seconds
+- Completed reload, in  0.049 seconds
 desktop: 1920x1080 120Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
+<RI.Hid> Failed to create device file:
+ 2 The system cannot find the file specified.
+
+ 
+(Filename:  Line: 54)
+
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Users\sweme\Documents\GitHub\Leap-Of-Faith\lof_Data\Managed\System.dll (this message is harmless)
@@ -27,10 +33,16 @@ Default clip could not be found in attached animations list.
 (Filename:  Line: 400)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 388 -> priority: 1 
+  Thread -> id: 1b30 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.978024 ms
+UnloadTime: 5.004623 ms
 
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 933.
-Total: 0.363725 ms (FindLiveObjects: 0.065569 ms CreateObjectMapping: 0.034331 ms MarkObjects: 0.248978 ms  DeleteObjects: 0.013608 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 933.
+Total: 0.361869 ms (FindLiveObjects: 0.077631 ms CreateObjectMapping: 0.017938 ms MarkObjects: 0.253927 ms  DeleteObjects: 0.011753 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.391805 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 933.
+Total: 0.642395 ms (FindLiveObjects: 0.054125 ms CreateObjectMapping: 0.037424 ms MarkObjects: 0.542494 ms  DeleteObjects: 0.007732 ms)
 

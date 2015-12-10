@@ -8,7 +8,7 @@ public class SimplePlatformController : MonoBehaviour
     public bool facingRight = true;
     [HideInInspector]
     public bool jump = false;
-    private int level_no = Application.loadedLevel;
+    public int level_no = 1;
 
 
 
@@ -24,9 +24,9 @@ public class SimplePlatformController : MonoBehaviour
 
     // blanket
     public bool blanketActive = false;
-    private GameObject blanket;
-    private bool blind;
-    private GameObject blindText;
+    public GameObject blanket;
+    public bool blind;
+    public GameObject blindText;
 
     // UI ----------------------------
     public Text scoreText;

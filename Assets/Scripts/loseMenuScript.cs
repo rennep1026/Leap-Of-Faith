@@ -6,6 +6,7 @@ public class loseMenuScript : MonoBehaviour {
 	public Button quitButton;
 	public Button retryButton;
     public AudioSource bgMusicForOff;
+	private SimplePlatformController controller;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,8 @@ public class loseMenuScript : MonoBehaviour {
 		retryButton = retryButton.GetComponent<Button> ();
         bgMusicForOff = bgMusicForOff.gameObject.GetComponent<AudioSource>();
         bgMusicForOff.enabled = false;
+		GameObject controllerObject = GameObject.FindWithTag("Player");
+		controller = controllerObject.GetComponent<SimplePlatformController> ();
 	}
 
 	public void quitPress()
@@ -22,6 +25,6 @@ public class loseMenuScript : MonoBehaviour {
 
 	public void retryPress()
 	{
-		Application.LoadLevel(Application.loadedLevel);
+		Application.LoadLevel(controller.level_no);
 	}
 }
