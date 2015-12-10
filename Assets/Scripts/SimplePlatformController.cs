@@ -8,9 +8,8 @@ public class SimplePlatformController : MonoBehaviour
     public bool facingRight = true;
     [HideInInspector]
     public bool jump = false;
-    public int level_no = 1;
-
-
+    public int level_no;
+    
 
     // HERBERT -----------------------
     public GameObject herbert;
@@ -60,6 +59,7 @@ public class SimplePlatformController : MonoBehaviour
 
 	void Awake ()
     {
+        level_no = Application.loadedLevel;
         herbert = GameObject.Find("hero");
         availableJumps = maxJumps;
 
@@ -193,7 +193,8 @@ public class SimplePlatformController : MonoBehaviour
 		if (score == 10)
         {
             //winText.SetActive (true);
-            Application.LoadLevel(++level_no);
+            //Application.Quit();
+            Application.LoadLevel(level_no+=1);
         }
     }
 
