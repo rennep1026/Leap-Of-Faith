@@ -189,11 +189,16 @@ public class SimplePlatformController : MonoBehaviour
     {
         ++score;
         sounds[1].Play();
-        scoreText.text = "Stuffies: " + score;  
-		if (score == 10)
+        scoreText.text = "Stuffies: " + score;
+		if (score == 10 && level_no == 3)
+		{
+			winText.SetActive (true);
+			fearIncrease = 0;
+			fearDecrease = 0;
+
+		}
+		else if (score == 10)
         {
-            //winText.SetActive (true);
-            //Application.Quit();
             Application.LoadLevel(level_no+=1);
         }
     }
