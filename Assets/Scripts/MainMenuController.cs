@@ -122,6 +122,16 @@ public class MainMenuController : MonoBehaviour
 		Application.LoadLevel (1);
 	}
 
+	public void StartLevel2()
+	{
+		Application.LoadLevel (2);
+	}
+
+	public void StartLevel3()
+	{
+		Application.LoadLevel (3);
+	}
+
 	public void ShowCredits()
 	{
 		creditsCanvas.enabled = true;
